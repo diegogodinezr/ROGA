@@ -10,7 +10,7 @@ from django.contrib import messages
 #====================LOGIN====================
 def login(request):
     if request.user.is_authenticated:
-        return redirect('/ventas/interfaz_venta')
+        return redirect('/')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -20,7 +20,7 @@ def login(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('/ventas/interfaz_venta')
+                return redirect('/')
             else:
                 messages.info(request, 'Username OR password is incorrect')
 

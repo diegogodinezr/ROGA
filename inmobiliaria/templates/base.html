@@ -574,8 +574,12 @@
                   </a>
                 </li>
               </ul>
-    
-              <button class="header-top-btn">Iniciar sesion</button>
+
+              {% if request.user.is_authenticated %}
+              <a href="/logout/"><button class="header-top-btn">Cerrar sesion</button></a>
+              {%  else %}
+              <a href="/login"><button class="header-top-btn">Iniciar sesion</button></a>
+              {%  endif %}
             </div>
     
           </div>
@@ -585,7 +589,7 @@
           <div class="container">
     
             <a href="#" class="logo">
-              <img src="media/logo.png" alt="ROGA LOGO">
+              <img src="../media/logo.png" alt="ROGA LOGO">
             </a>
     
             <nav class="navbar" data-navbar>
@@ -603,10 +607,11 @@
               </div>
     
               <div class="navbar-bottom">
+                {% if request.user.is_authenticated %}
                 <ul class="navbar-list">
     
                   <li>
-                    <a href="#home" class="navbar-link" data-nav-link>Inicio</a>
+                    <a href="/" class="navbar-link" data-nav-link>Inicio</a>
                   </li>
     
                   <li>
@@ -621,6 +626,7 @@
                     <a href="#property" class="navbar-link" data-nav-link>Propiedades</a>
                   </li>
                 </ul>
+                {%  endif %}
               </div>
     
             </nav>
