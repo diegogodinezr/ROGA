@@ -34,3 +34,19 @@ def landing(request):
         'view_name': "landing1",
     }
     return render (request,template_to_return,context)
+#======================REGISTRO=================
+def registro(request):
+    if request.user.is_authenticated:
+        return redirect('landing')
+    else:
+        form = CreateUserForm()
+        if request.method=='POST':
+            form= CreateUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user=form.cleaned_data.get('username')
+                messages.success(request,'La cuenta ha sido creada para:'+ user)
+                return redirect('landing')
+
+        context={'form':form}
+        return render(request,'register.html',context)

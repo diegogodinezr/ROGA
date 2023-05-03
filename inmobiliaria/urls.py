@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^$',landing, name="landing"),
     path("login/", login, name="login_ventas"),
     path('logout/',LogoutView.as_view(next_page='/'), name='logout'),
+        path('register/', registro, name="registro"),
 ]
