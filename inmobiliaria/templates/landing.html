@@ -9,19 +9,127 @@
             text-align: justify;
             font-family: "Open Sans", Arial, sans-serif;
         }
+        .carousel{
+            min-heigth: 500px
+          }
+          .carousel .carousel-item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            width: 500px;
+            heigth: 500px;
+          }
+          .carousel .carousel-item img {
+            width: 100%;
+            heigth: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+            border-radius: 25px;
+          }
+          .carousel .indicators .indicator-item{
+            border-radius: 0;
+            transform: rotate(45deg);
+            margin: 0 15px;
+            background: #36221c;
+          }
+
+/*-----------------------------------*\
+#HERO
+\*-----------------------------------*/
+
+.hero {
+background: white;
+padding-block: var(--section-padding);
+}
+
+.hero-content { margin-bottom: 60px; }
+
+.hero-subtitle {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 5px;
+margin-bottom: 20px;
+}
+
+.hero-subtitle ion-icon { color: #F4A32B; }
+
+.hero-subtitle span {
+color: black;
+font-size: var(--fs-5);
+font-weight: var(--fw-700);
+}
+
+.hero-title { 
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.hero-text {
+color: black;
+font-size: var(--fs-5);
+line-height: 1.8;
+padding-left: 15px;
+border-left: 1px solid;
+margin-bottom: 30px;
+}
+.hero-content { max-width: 400px; }
+
+.hero-content {
+    max-width: unset;
+    margin-bottom: 0;
+  }
+
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  --ff-nunito-sans: "Nunito Sans", sans-serif;
+  --ff-poppins: "Poppins", sans-serif;
+
+
     </style>
 <body>
   <div class="parallax-container">
-      <div class="parallax"><img src="/media/casa1.jpeg"></div>
+      <div class="parallax"><img src="/media/parallax.jpeg"></div>
     </div>
     <div class="section white">
       <div class="row container">
-        <h2 class="header">Parallax</h2>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+       
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">
+              <ion-icon name="home"></ion-icon>
+
+              <span>Agencia inmobiliaria ROGA</span>
+            </p>
+
+            <h2 class="h1 hero-title">Encuentra tu proxima vivienda con nostros</h2>
+ 
+            <p class="hero-text">
+              Mandanos un correo para que te podamos ayudar a encontrar la casa de tus sueños.
+            </p>
+
+            <a href="mailto:godinezroblesdiego"><button class="btn orange lighten-2" style="cursor: pointer;">Contactanos</button></a>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="/media/casa1.png" class="w-100">
+          </figure>
+
+        </div>
+      </section>
       </div>
     </div>
     <div class="parallax-container">
-      <div class="parallax"><img src="/media/casa1.jpeg"></div>
+      <div class="parallax"><img src="/media/parallax.jpeg"></div>
     </div>
 
 <div class = "center titulo">
@@ -60,16 +168,65 @@
       </div>  
   </div>
 </div>
-
+<div class="container">
+    <div class="row">
+        <div class = "col s12">
+            <h3 class = "center-align titulo">Algunas de nuestras opciones</h3>
+            <div class = "carousel center-align">
+                <div class = "carousel-item">
+                    <div class="linea-division"></div>
+                    <img src="/media/casa11.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa2.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa3.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa4.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa5.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa6.jpeg" alt="">
+                </div>
+                <div class = "carousel-item">
+                  <div class="linea-division"></div>
+                  <img src="/media/casa7.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         
 </body>
 {% endblock content%}
 
 {% block js %}
-<script>
+<script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.parallax');
     var instances = M.Parallax.init(elems);
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, {
+        duration: 150,
+        dist: -80,
+        shift: 5,
+        padding: 5,
+        numVisible: 3,
+        indicators: true,
+        noWrap:false,
+    });
+    });
+
 </script>
 {% endblock js %}
