@@ -1,0 +1,180 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<link
+  href="https://fonts.googleapis.com/css2?family=Magra&display=swap"
+  rel="stylesheet"
+/>
+<style>
+
+.about { padding-block: 70px; 
+background: #FFFCF9;
+}
+
+.about-banner {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.about-banner > img {
+  max-width: max-content;
+  width: 100%;
+}
+
+.about-banner .abs-img {
+  position: absolute;
+  bottom: 100px;
+  left: 15px;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.about .section-subtitle { margin-inline: 0; }
+
+.about .section-title {
+  --text-align: left;
+  --margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-text {
+  color: hsl(200, 15%, 43%);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.about-list { margin-bottom: 30px; }
+
+.about-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.about-item-icon {
+  background: hsl(7, 56%, 91%);
+  height: 45px;
+  min-width: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.about-item-icon ion-icon {
+  color: #F4A32B;
+  font-size: 18px;
+}
+
+.about-item-text {
+  color: hsl(200, 15%, 43%);
+  font-size: 12px;
+}
+
+.about .callout {
+  background: hsla(7, 78%, 53%, 0.05);
+  color: hsl(200, 15%, 43%);
+  font-size: 11px;
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  padding: 20px 25px;
+  border-left: 4px solid #F4A32B;
+  margin-bottom: 40px;
+}
+
+.about .btn {
+  max-width: max-content;
+  --text-transform: uppercase;
+}
+
+.about .section-title { max-width: 30ch; }
+
+.about-text { max-width: 55ch }
+
+.about-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .about-banner { margin-bottom: 0; }
+
+  .about-banner > img { width: 100%; }
+
+
+</style>
+<body>
+  <section class="about" id="about">
+    <div class="container">
+      <figure class="about-banner">
+        <img src="/media/about-banner-1.png" alt="House interior" />
+
+        <img
+          src="/media/about-banner-2.jpg"
+          alt="House interior"
+          class="abs-img"
+        />
+      </figure>
+
+      <div class="about-content">
+
+        <h2 class="h2 section-title">
+          Una de las mejores inmobiliarias del estado
+        </h2>
+
+        <p class="about-text">
+            Mas de 250 personas en todo el estado han confiado en nosotros para rentar alguna de nuestras viviendas y han quedado satisfechos con nuestro servicio.
+        </p>
+
+        <ul class="about-list">
+          <li class="about-item">
+            <div class="about-item-icon">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+
+            <p class="about-item-text">Casas de distintos diseños</p>
+          </li>
+
+          <li class="about-item">
+            <div class="about-item-icon">
+              <ion-icon name="leaf-outline"></ion-icon>
+            </div>
+
+            <p class="about-item-text">Buenas ubicaciones</p>
+          </li>
+
+          <li class="about-item">
+            <div class="about-item-icon">
+              <ion-icon name="wine-outline"></ion-icon>
+            </div>
+
+            <p class="about-item-text">Buen estilo de vida</p>
+          </li>
+
+          <li class="about-item">
+            <div class="about-item-icon">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+            </div>
+
+            <p class="about-item-text">Completa seguridad 24/7</p>
+          </li>
+        </ul>
+
+        <p class="callout">
+            Contamos de igual manera con departamentos, localesm terrenos y oficinas en renta y venta.
+        </p>
+
+        <a href="/servicios" class="btn orange lighten-2">Nuestros servicios</a>
+      </div>
+      <br>
+    </div>
+  </section>
+</body>
+{% endblock content%} {% block js %}
+<script type="text/javascript"></script>
+{% endblock js %}

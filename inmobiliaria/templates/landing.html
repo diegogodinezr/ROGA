@@ -1,84 +1,84 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %} {% block content %}
+<link
+  href="https://fonts.googleapis.com/css2?family=Magra&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  .texto-justificado {
+    text-align: justify;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+  .carousel {
+    min-heigth: 500px;
+  }
+  .carousel .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    width: 500px;
+    heigth: 500px;
+  }
+  .carousel .carousel-item img {
+    width: 100%;
+    heigth: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    border-radius: 25px;
+  }
+  .carousel .indicators .indicator-item {
+    border-radius: 0;
+    transform: rotate(45deg);
+    margin: 0 15px;
+    background: #36221c;
+  }
 
-{% block content %}
-    <link rel="stylesheet" href="reset.css">
-    <link href="https://fonts.googleapis.com/css2?family=Magra&display=swap" rel="stylesheet">
-    <style>
-        .texto-justificado{
-            text-align: justify;
-            font-family: "Open Sans", Arial, sans-serif;
-        }
-        .carousel{
-            min-heigth: 500px
-          }
-          .carousel .carousel-item{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            user-select: none;
-            width: 500px;
-            heigth: 500px;
-          }
-          .carousel .carousel-item img {
-            width: 100%;
-            heigth: 100%;
-            object-fit: cover;
-            position: absolute;
-            z-index: -1;
-            border-radius: 25px;
-          }
-          .carousel .indicators .indicator-item{
-            border-radius: 0;
-            transform: rotate(45deg);
-            margin: 0 15px;
-            background: #36221c;
-          }
+  .hero {
+    background: white;
 
-/*-----------------------------------*\
-#HERO
-\*-----------------------------------*/
+  }
+  .hero-content {
+    margin-bottom: 60px;
+  }
 
-.hero {
-background: white;
-padding-block: var(--section-padding);
-}
+  .hero-subtitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
 
-.hero-content { margin-bottom: 60px; }
+  .hero-subtitle ion-icon {
+    color: #f4a32b;
+  }
 
-.hero-subtitle {
-display: flex;
-justify-content: flex-start;
-align-items: center;
-gap: 5px;
-margin-bottom: 20px;
-}
+  .hero-subtitle span {
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
 
-.hero-subtitle ion-icon { color: #F4A32B; }
-
-.hero-subtitle span {
-color: black;
-font-size: var(--fs-5);
-font-weight: var(--fw-700);
-}
-
-.hero-title { 
+  .hero-title {
     margin-bottom: 30px;
     text-align: justify;
-}
+  }
 
-.hero-text {
-color: black;
-font-size: var(--fs-5);
-line-height: 1.8;
-padding-left: 15px;
-border-left: 1px solid;
-margin-bottom: 30px;
-}
-.hero-content { max-width: 400px; }
+  .hero-text {
+    color: black;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    padding-left: 15px;
+    border-left: 1px solid;
+    margin-bottom: 30px;
+  }
+  .hero-content {
+    max-width: 400px;
+  }
 
-.hero-content {
+  .hero-content {
     max-width: unset;
     margin-bottom: 0;
   }
@@ -88,145 +88,158 @@ margin-bottom: 30px;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
-  --ff-nunito-sans: "Nunito Sans", sans-serif;
-  --ff-poppins: "Poppins", sans-serif;
-
-
-    </style>
+</style>
 <body>
   <div class="parallax-container">
-      <div class="parallax"><img src="/media/parallax.jpeg"></div>
-    </div>
-    <div class="section white">
-      <div class="row container">
-       
+    <div class="parallax"><img src="/media/parallax.jpeg" /></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
       <section class="hero" id="home">
         <div class="container">
-
           <div class="hero-content">
-
             <p class="hero-subtitle">
               <ion-icon name="home"></ion-icon>
 
               <span>Agencia inmobiliaria ROGA</span>
             </p>
 
-            <h2 class="h1 hero-title">Encuentra tu proxima vivienda con nostros</h2>
- 
+            <h2 class="h1 hero-title">
+              Encuentra tu proxima vivienda con nostros
+            </h2>
+
             <p class="hero-text">
-              Mandanos un correo para que te podamos ayudar a encontrar la casa de tus sueños.
+              Mandanos un correo para que te podamos ayudar a encontrar la casa
+              de tus sueños.
             </p>
 
-            <a href="mailto:godinezroblesdiego"><button class="btn orange lighten-2" style="cursor: pointer;">Contactanos</button></a>
+            <a href="mailto:godinezroblesdiego"
+              ><button class="btn orange lighten-2" style="cursor: pointer">
+                Contactanos
+              </button></a
+            >
           </div>
 
           <figure class="hero-banner">
-            <img src="/media/casa1.png" class="w-100">
+            <img src="/media/casa1.png" class="w-100" />
           </figure>
-
         </div>
       </section>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="/media/parallax.jpeg" /></div>
+  </div>
+
+  <div class="center titulo">
+    <h3>Quienes somos?</h3>
+  </div>
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s4">
+          <div class="icon-block">
+            <h2 class="center black-text">
+              <i class="medium material-icons center">real_estate_agent</i>
+            </h2>
+            <h4 class="center">Historia</h4>
+            <h6 class="texto-justificado">
+              ROGA es una empresa fundada hace más de 60 años en el estado de
+              Colima, México. Desde sus inicios, la empresa se ha enfocado en
+              ofrecer un servicio personalizado y de alta calidad en el mercado
+              inmobiliario local. La empresa se enorgullece de ser una empresa
+              familiar y de tener una larga trayectoria en el mercado
+              inmobiliario local, lo que les ha permitido construir relaciones
+              de confianza y lealtad con sus clientes y la comunidad.
+            </h6>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="icon-block">
+            <h2 class="center black-text">
+              <i class="medium material-icons center">home</i>
+            </h2>
+            <h4 class="center">Mision</h4>
+            <h6 class="texto-justificado">
+              La misión de ROGA es ofrecer un servicio de alta calidad en el
+              mercado inmobiliario, brindando a los clientes una atención
+              personalizada y profesional, con el fin de ayudarles a encontrar
+              la propiedad perfecta para sus necesidades y a lograr sus
+              objetivos de inversión.
+            </h6>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="icon-block">
+            <h2 class="center black-text">
+              <i class="medium material-icons center">apartment</i>
+            </h2>
+            <h4 class="center">Vision</h4>
+            <h6 class="texto-justificado">
+              La visión de ROGA es convertirse en la inmobiliaria líder en el
+              estado de Colima, reconocida por su excelencia en el servicio al
+              cliente y su amplio conocimiento del mercado inmobiliario local.
+            </h6>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="/media/parallax.jpeg"></div>
-    </div>
-
-<div class = "center titulo">
-    <h3>Quienes somos?</h3>
-</div>
-<div class="container">
-  <div class="section">
-      <div class="row">
-          <div class="col s4">
-              <div class="icon-block">
-                  <h2 class="center black-text">
-                      <i class="medium material-icons center">real_estate_agent</i>
-                  </h2>
-                  <h4 class="center">Historia</h4>
-                  <h6 class="texto-justificado">ROGA es una empresa fundada hace más de 60 años en el estado de Colima, México. Desde sus inicios, la empresa se ha enfocado en ofrecer un servicio personalizado y de alta calidad en el mercado inmobiliario local. La empresa se enorgullece de ser una empresa familiar y de tener una larga trayectoria en el mercado inmobiliario local, lo que les ha permitido construir relaciones de confianza y lealtad con sus clientes y la comunidad.</h6>
-              </div>
-          </div>
-          <div class="col s4">
-              <div class="icon-block">
-                  <h2 class="center black-text">
-                      <i class="medium material-icons center">home</i>
-                  </h2>
-                  <h4 class="center">Mision</h4>
-                  <h6 class="texto-justificado">La misión de ROGA es ofrecer un servicio de alta calidad en el mercado inmobiliario, brindando a los clientes una atención personalizada y profesional, con el fin de ayudarles a encontrar la propiedad perfecta para sus necesidades y a lograr sus objetivos de inversión.</h6>
-              </div>
-          </div>
-          <div class="col s4">
-              <div class="icon-block">
-                  <h2 class="center black-text">
-                      <i class="medium material-icons center">apartment</i>
-                  </h2>
-                  <h4 class="center">Vision</h4>
-                  <h6 class="texto-justificado">La visión de ROGA es convertirse en la inmobiliaria líder en el estado de Colima, reconocida por su excelencia en el servicio al cliente y su amplio conocimiento del mercado inmobiliario local.</h6>
-              </div>
-          </div>
-      </div>  
   </div>
-</div>
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class = "col s12">
-            <h3 class = "center-align titulo">Algunas de nuestras opciones</h3>
-            <div class = "carousel center-align">
-                <div class = "carousel-item">
-                    <div class="linea-division"></div>
-                    <img src="/media/casa11.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa2.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa3.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa4.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa5.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa6.jpeg" alt="">
-                </div>
-                <div class = "carousel-item">
-                  <div class="linea-division"></div>
-                  <img src="/media/casa7.jpeg" alt="">
-                </div>
-            </div>
+      <div class="col s12">
+        <h3 class="center-align titulo">Algunas de nuestras opciones</h3>
+        <div class="carousel center-align">
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa11.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa2.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa3.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa4.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa5.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa6.jpeg" alt="" />
+          </div>
+          <div class="carousel-item">
+            <div class="linea-division"></div>
+            <img src="/media/casa7.jpeg" alt="" />
+          </div>
         </div>
+      </div>
     </div>
-</div>
-        
+  </div>
 </body>
-{% endblock content%}
-
-{% block js %}
+{% endblock content%} {% block js %}
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.parallax');
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".parallax");
     var instances = M.Parallax.init(elems);
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".carousel");
     var instances = M.Carousel.init(elems, {
-        duration: 150,
-        dist: -80,
-        shift: 5,
-        padding: 5,
-        numVisible: 3,
-        indicators: true,
-        noWrap:false,
+      duration: 150,
+      dist: -80,
+      shift: 5,
+      padding: 5,
+      numVisible: 3,
+      indicators: true,
+      noWrap: false,
     });
-    });
-
+  });
 </script>
 {% endblock js %}

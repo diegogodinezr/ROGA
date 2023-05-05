@@ -50,3 +50,19 @@ def registro(request):
 
         context={'form':form}
         return render(request,'register.html',context)
+    
+#====================ABOUT====================
+def about(request):
+    template_to_return='about.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)
+
+#====================SERVICIOS====================
+def servicios(request):
+    template_to_return='servicios.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)

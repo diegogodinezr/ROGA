@@ -22,16 +22,14 @@
     <!-- <script  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js "  integrity = " sha384-THVO / sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb / PTA7LdUHs "  crossorigin = " anonymous " > </script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js" ></script>-->
 
-
-
-
-
     <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se-2.2.13/dt-1.10.18/af-2.3.2/b-1.5.4/b-flash-1.5.4/b-html5-1.5.4/r-2.2.2/datatables.min.css"/>-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.dataTables.min.css">
     <script src="{% static '/locale/es.js' %}"></script>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
     <style>
         body,
 		html {
@@ -164,7 +162,7 @@
         table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
         table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
             border: none;
-            font-family: 'Material Icons';
+            font-family: 'Poppins', sans-serif;
             content: "expand_more";
             bottom: 0;
             left: 0;
@@ -180,7 +178,7 @@
         table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before,
         table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
             background-color: none;
-            font-family: 'Material Icons';
+            font-family: 'Poppins', sans-serif;
             content: "expand_less";
 
         }
@@ -266,8 +264,8 @@
       
       .header-top-link {
         color: white;
-        font-size: var(--fs-6);
-        font-weight: var(--fw-700);
+        font-size: 12px;
+        font-weight: 800;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -278,7 +276,7 @@
       
       .header-top-link ion-icon {
         color: #F4A32B;
-        font-size: 15px;
+        font-size: 12px;
         --ionicon-stroke-width: 60px;
       }
       
@@ -294,7 +292,7 @@
       
       .header-top-social-link {
         color: white;
-        font-size: 15px;
+        font-size: 20px;
       }
       
       .header-top-btn {
@@ -338,7 +336,7 @@
         justify-content: space-between;
         align-items: center;
         padding-bottom: 40px;
-        border-bottom: 1px solid var(--cultured-1);
+        border-bottom: 1px solid hsl(0, 0%, 93%);
         margin-bottom: 25px;
       }
       
@@ -351,14 +349,14 @@
       }
       
       .navbar-link {
-        color: var(--cadet);
+        color: hsl(200, 15%, 43%);
         font-size: var(--fs-5);
         font-weight: var(--fw-600);
         text-transform: uppercase;
         padding-block: 15px;
       }
       
-      .navbar-link:is(:hover, :focus) { color: var(--orange-soda); }
+      .navbar-link:is(:hover, :focus) { color: #F4A32B; }
       
       .overlay {
         position: fixed;
@@ -366,7 +364,7 @@
         background: hsla(0, 0%, 0%, 0.7);
         opacity: 0;
         pointer-events: none;
-        transition: var(--transition);
+        transition: 0.25s ease;
         z-index: 4;
       }
       
@@ -376,7 +374,7 @@
       }
       
       .header-bottom-actions {
-        background: var(--white);
+        background: white;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -394,16 +392,16 @@
         margin-inline: auto;
         margin-bottom: 5px;
         --ionicon-stroke-width: 40px;
-        transition: var(--transition);
+        transition: 0.25s ease;
       }
       
-      .header-bottom-actions-btn:is(:hover, :focus) ion-icon { color: var(--orange-soda); }
+      .header-bottom-actions-btn:is(:hover, :focus) ion-icon { color: #F4A32B; }
       
       .header-bottom-actions-btn span {
-        color: var(--cadet);
-        font-family: var(--ff-poppins);
-        font-size: var(--fs-7);
-        font-weight: var(--fw-500);
+        color: hsl(200, 15%, 43%);
+        font-family: "Poppins", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 500;
       }
       
   /**
@@ -438,10 +436,10 @@
   .header-bottom-actions-btn span { display: none; }
 
   .header-bottom-actions-btn {
-    background: var(--white);
+    background: white;
     width: 50px;
     height: 50px;
-    box-shadow: var(--shadow-2);
+    box-shadow: 0 16px 32px hsla(188, 63%, 7%, 0.1);
   }
   
   /**
@@ -454,7 +452,7 @@
 
   .header-top-social-list { gap: 12px; }
 
-  .header-top-social-link { font-size: 1rem; }
+  .header-top-social-link { font-size: 18px; }
 
   .header-top-btn { padding: 10px 20px; }
 
@@ -476,10 +474,10 @@
   .header-bottom-actions-btn span { display: none; }
 
   .header-bottom-actions-btn {
-    background: var(--white);
+    background: white;
     width: 50px;
     height: 50px;
-    box-shadow: var(--shadow-2);
+    box-shadow: 0 16px 32px hsla(188, 63%, 7%, 0.1);
   }      
 
   /**
@@ -502,7 +500,7 @@
   }
 
   .navbar-link {
-    color: var(--dark-jungle-green);
+    color: hsl(188, 63%, 7%);
     --fs-5: 1.125rem;
     text-transform: capitalize;
   }
@@ -596,10 +594,6 @@
     
               <div class="navbar-top">
     
-                <a href="#" class="logo">
-                  <img src="./assets/images/logo.png" alt="Homeverse logo">
-                </a>
-    
                 <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
                   <ion-icon name="close-outline"></ion-icon>
                 </button>
@@ -615,11 +609,11 @@
                   </li>
     
                   <li>
-                    <a href="#about" class="navbar-link" data-nav-link>Acerca de nosotros</a>
+                    <a href="/about" class="navbar-link" data-nav-link>Acerca de nosotros</a>
                   </li>
     
                   <li>
-                    <a href="#service" class="navbar-link" data-nav-link>Servicios</a>
+                    <a href="/servicios" class="navbar-link" data-nav-link>Servicios</a>
                   </li>
     
                   <li>
