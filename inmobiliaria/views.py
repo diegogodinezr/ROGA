@@ -66,3 +66,11 @@ def servicios(request):
         'view_name': "landing1",
     }
     return render (request,template_to_return,context)
+
+#====================PROPIEDADES====================
+def propiedades(request):
+    template_to_return='propiedades.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)

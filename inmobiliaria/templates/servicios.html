@@ -1,0 +1,225 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<style>
+
+.service {
+    background: #FFFCF9;
+    padding-block: 50px;
+  }
+  
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .service-card {
+    position: relative;
+    background: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 40px 30px;
+    box-shadow: 0 16px 32px hsla(188, 63%, 7%, 0.1);
+  }
+  
+  .service-card .card-icon {
+    width: max-content;
+    margin-inline: auto;
+    margin-bottom: 20px;
+  }
+  
+  .service-card .card-title { 
+    margin-bottom: 15px; 
+    color: black;
+}
+.service-card .card-title { margin-bottom: 15px; }
+
+.service-card .card-title > a:is(:hover, :focus) { color: #F4A32B; }
+  
+  .service-card .card-text {
+    color: hsl(200, 15%, 43%);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+  
+  .service-card .card-link {
+    color: hsl(180, 20%, 62%);
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .service-card:is(:hover, :focus) .card-link { color: #F4A32B; }
+  
+  .service-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #F4A32B;
+    transition: 0.25s ease;
+  }
+  
+  .service-card:is(:hover, :focus)::after { width: 100%; }
+  
+  .service-list > li { width: calc(33.33% - 20px); }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Poppins';
+  }
+</style>
+<body>
+  <section class="service" id="service">
+    <div class="container">
+
+      <h2 class="h2 section-title">Nuestros servicios</h2>
+
+      <ul class="service-list">
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-1.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="">Venta de casas</a>
+            </h3>
+
+            <p class="card-text">
+              Más de 50 casas en venta disponibles en el sitio web, podemos encontrarle una casa a la que querrá llamar hogar.
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra una casa</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-2.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="#">Renta de casas</a>
+            </h3>
+
+            <p class="card-text">
+              Más de 10 casas en renta disponibles en el sitio web,
+              podemos encontrarle una casa de acuerdo a sus necesidades
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra una casa</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-3.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="#">Vende tu casa</a>
+            </h3>
+
+            <p class="card-text">
+              Confianos la venta de tu propiedad, nosotros nos encargamos de todo el proceso.
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra una casa</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="service-list">
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-1.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="#">Venta de terrenos</a>
+            </h3>
+
+            <p class="card-text">
+              Más de 50 terrenos en venta disponibles en el sitio web, podemos encontrarle un terreno a la que querrá llamar hogar.
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra un terreno</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-2.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="#">Renta de terrenos</a>
+            </h3>
+
+            <p class="card-text">
+              Más de 20 terrenos en renta disponibles en el sitio web,
+              podemos encontrarle un terreno de acuerdo a sus necesidades
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra un terreno</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card">
+            <div class="card-icon">
+              <img src="/media/service-3.png" alt="Service icon" />
+            </div>
+
+            <h3 class="h3 card-title">
+              <a href="#">Vende tu <br>terreno</a>
+            </h3>
+
+            <p class="card-text">
+              Confianos la venta de tu propiedad, nosotros nos encargamos de todo el proceso de venta.
+            </p>
+
+            <a href="/propiedades" class="card-link">
+              <span>Encuentra un terreno</span>
+
+              <ion-icon name="arrow-forward-outline"></ion-icon>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+{% endblock content%} {% block js %}
+<script type="text/javascript"></script>
+{% endblock js %}
