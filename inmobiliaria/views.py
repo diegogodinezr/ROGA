@@ -74,3 +74,11 @@ def propiedades(request):
         'view_name': "landing1",
     }
     return render (request,template_to_return,context)
+
+#====================CASAS====================
+def casas(request):
+    template_to_return='casas.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)

@@ -107,19 +107,6 @@ body {
   overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track { background: var(--white); }
-
-::-webkit-scrollbar-thumb {
-  background: var(--cadet);
-  border-left: 2px solid var(--white);
-}
-
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -195,7 +182,17 @@ button, a { transition: var(--transition); }
   margin-inline: auto;
   margin-bottom: 15px;
 }
-
+.section-subtitulo {
+  color: var(--orange-soda);
+  font-size: 20px;
+  font-weight: var(--fw-600);
+  padding: 5px 20px;
+  background: hsla(9, 100%, 62%, 0.1);
+  width: max-content;
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-bottom: 15px;
+}
 .section-title {
   text-align: var(--text-align, center);
   margin-bottom: var(--margin-bottom, 50px);
@@ -216,37 +213,6 @@ button, a { transition: var(--transition); }
 .card-badge.green { background: var(--yellow-green); }
 
 .card-badge.orange { background: var(--orange-soda); }
-
-.has-scrollbar {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  overflow-x: auto;
-  margin-inline: -15px;
-  padding-inline: 15px;
-  scroll-padding-left: 15px;
-  padding-bottom: 60px;
-  scroll-snap-type: inline mandatory;
-}
-
-.has-scrollbar > li {
-  min-width: 100%;
-  scroll-snap-align: start;
-}
-
-.has-scrollbar::-webkit-scrollbar-track {
-  background: var(--cultured-2);
-  outline: 2px solid var(--cadet);
-  border-radius: 10px;
-}
-
-.has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--cadet);
-  border: 1px solid var(--cultured-2);
-  border-radius: 10px;
-}
-
-.has-scrollbar::-webkit-scrollbar-button { width: 15%; }
 
 
 
@@ -874,6 +840,7 @@ button, a { transition: var(--transition); }
       </ul>
     </div>
   </section>
+  <a href="/casas"><p class="section-subtitulo">Ver mas</p></a>
 </body>
 {% endblock content%} {% block js %}
 <script type="text/javascript"></script>
