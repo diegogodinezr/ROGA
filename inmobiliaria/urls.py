@@ -16,4 +16,7 @@ urlpatterns = [
     path('servicios/', servicios, name="servicios"),
     path('propiedades/', propiedades, name="propiedades"),
     path('casas/', casas, name="casas"),
+    path('departamentos/', depas, name="departamentos"),
+    path('terrenos/', terrenos, name="terrenos"),
+    path('casass/', casass, name="casass"),
 ]

@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<style>
+  .casas {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Poppins';
+    font size: 50px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+<body>
+    
+<h2 class = "center casas">Propiedades</h2>
+
+<nav class="navbar" data-navbar>
+    
+  <div class="navbar-top">
+
+    <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="navbar-bottom">
+    {% if request.user.is_authenticated %}
+    <ul class="navbar-list">
+
+      <li>
+        <a href="http://127.0.0.1:8000/casas/" class="navbar-link" data-nav-link>Todo</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/casass/" class="navbar-link" data-nav-link>Casas</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/terrenos/" class="navbar-link" data-nav-link>Terrenos</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/departamentos/" class="navbar-link" data-nav-link>Departamentos</a>
+      </li>
+    </ul>
+    {%  endif %}
+  </div>
+
+</nav>
+{% endblock content%} {% block js %}
+<script type="text/javascript"></script>
+{% endblock js %}

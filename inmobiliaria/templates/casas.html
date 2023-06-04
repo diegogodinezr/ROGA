@@ -6,31 +6,91 @@
     font-family: 'Poppins';
     font size: 50px;
   }
- 
-  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
 </style>
 <body>
     
 <h2 class = "center casas">Propiedades</h2>
+
+<nav class="navbar" data-navbar>
+    
+  <div class="navbar-top">
+
+    <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="navbar-bottom">
+    {% if request.user.is_authenticated %}
+    <ul class="navbar-list">
+
+      <li>
+        <a href="http://127.0.0.1:8000/casas/" class="navbar-link" data-nav-link>Todo</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/casass/" class="navbar-link" data-nav-link>Casas</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/terrenos/" class="navbar-link" data-nav-link>Terrenos</a>
+      </li>
+
+      <li>
+        <a href="http://127.0.0.1:8000/departamentos/" class="navbar-link" data-nav-link>Departamentos</a>
+      </li>
+    </ul>
+    {%  endif %}
+  </div>
+
+</nav>
 <br>
-
-
-
+<br>
 <div class="row">
-
   <div class="col s3 center">
     <div class="card center">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="/media/casal.jpeg">
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Casa en esmeralda norte<i class="material-icons right">more_vert</i></span>
+        <span class="card-title activator grey-text text-darken-4">Casa en Altozano<i class="material-icons right">more_vert</i></span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Casa en esmeralda norte<i class="material-icons right">close</i></span>
-        <h5>Disfruta de un delicioso cafe junto con umas galletas para empezar bien el dia, esto puede ser un cafe caliente o frio y galletas de cualquier tipo de la marca Gamesa</h5>
+        <span class="card-title grey-text text-darken-4">Casa en Altozano<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En renta</div>
+        <h5>Casa elegante y luminosa en una ubicación céntrica. Cuenta con un diseño contemporáneo, con muchos cuartos y espaciosa</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>5</strong>
+  
+            <ion-icon name="bed-outline"></ion-icon>
+  
+            <span>Cuartos</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>3</strong>
+  
+            <ion-icon name="man-outline"></ion-icon>
+  
+            <span>Baños</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>300</strong>
+  
+            <ion-icon name="square-outline"></ion-icon>
+  
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
       </div>
-    </div>  
+    </div>
   </div>
   <div class="col s3 center">
     <div class="card center">
@@ -42,7 +102,33 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Departamento<i class="material-icons right">close</i></span>
-        <h5>2 son mejor que una, y mas se si trata de pizza, llevate 2 pizzas por $180 cualquier dia del fin de semana</h5>
+        <div class="card-badge green">En renta</div>
+        <h5>Moderno apartamento de un dormitorio con un diseño elegante y comodidades contemporáneas. Ubicado en el centro de la ciudad, cerca de tiendas y restaurantes.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>2</strong>
+  
+            <ion-icon name="bed-outline"></ion-icon>
+  
+            <span>Cuartos</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>1</strong>
+  
+            <ion-icon name="man-outline"></ion-icon>
+  
+            <span>Baño</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>180</strong>
+  
+            <ion-icon name="square-outline"></ion-icon>
+  
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -56,8 +142,9 @@
 {% comment %}<p><a href="/abarrotes/landingproductoa">Productos</a></p> {% endcomment %}
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Promocion 3<i class="material-icons right">close</i></span>
-        <h5>Para quitar el hambre!, llevate 2 rebanas de pizza y una coca cola de 355ml por 60 pesitos</h5>
+        <span class="card-title grey-text text-darken-4">Terreno en renta<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En renta</div>
+        <h5>Terreno en una zona residencial tranquila, rodeado de naturaleza. Perfecto para construir una casa familiar con un amplio jardín.</h5>
       </div>
     </div>
   </div>
@@ -71,7 +158,33 @@
     </div>
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Casa en renta<i class="material-icons right">close</i></span>
-      <h5>Para quitar el hambre!, llevate 2 rebanas de pizza y una coca cola de 355ml por 60 pesitos</h5>
+      <div class="card-badge orange">En proceso de renta</div>
+      <h5>Encantadora casa de campo con un diseño rústico y acogedor. Disfruta de su chimenea, amplios ventanales y hermosas vistas a la montaña.</h5>
+      <ul class="card-list">
+        <li class="card-item">
+          <strong>3</strong>
+
+          <ion-icon name="bed-outline"></ion-icon>
+
+          <span>Cuartos</span>
+        </li>
+
+        <li class="card-item">
+          <strong>2</strong>
+
+          <ion-icon name="man-outline"></ion-icon>
+
+          <span>Baño</span>
+        </li>
+
+        <li class="card-item">
+          <strong>210</strong>
+
+          <ion-icon name="square-outline"></ion-icon>
+
+          <span>Metros cuadrados</span>
+        </li>
+      </ul>
     </div>
   </div>
   </div>
@@ -91,7 +204,33 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Departamento exclusivo<i class="material-icons right">close</i></span>
-        <h5>El alma de la fiesta!, llevate una Don Julio 70 en tan solo 879 pesos para que la sed no sea un impedimento</h5>
+        <div class="card-badge green">En renta</div>
+        <h5>Amplio departamento en un edificio de lujo con vistas impresionantes. Cuenta con múltiples balcones, áreas comunes y estacionamiento subterráneo.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>2</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>1</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baño</span>
+          </li>
+
+          <li class="card-item">
+            <strong>130</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
       </div>
     </div>  
   </div>
@@ -105,7 +244,33 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Casa en venta<i class="material-icons right">close</i></span>
-        <h5>Entre mas corriente, mas ambiente!, aprovecha esta promocion para que no digas que la quincena no te alcanza para la fiesta</h5>
+        <div class="card-badge green">En venta</div>
+        <h5>Espaciosa casa familiar en un vecindario tranquilo. Cuenta con múltiples habitaciones, un gran patio trasero y está cerca de parques y escuelas.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>2</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baños</span>
+          </li>
+
+          <li class="card-item">
+            <strong>220</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -119,7 +284,8 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Terreno sobre avenida<i class="material-icons right">close</i></span>
-        <h5>El mejor combo para pasarla bien!, llevate una botella de smirnoff tamarindo y un paketaxo por solo $255</h5>
+        <div class="card-badge orange">En proceso de venta</div>
+        <h5>Amplio terreno residencial en una ubicación privilegiada. Perfecto para construir la casa de tus sueños y disfrutar de vistas panorámicas.</h5>
       </div>
     </div>
   </div>
@@ -133,7 +299,33 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">Casa rustica<i class="material-icons right">close</i></span>
-        <h5>El mejor combo para pasarla bien!, llevate una botella de smirnoff tamarindo y un paketaxo por solo $255</h5>
+        <div class="card-badge green">En venta</div>
+        <h5>Casa de estilo mediterráneo con un diseño abierto y mucha luz natural. Disfruta de su amplio jardín, zona de barbacoa y piscina.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baños</span>
+          </li>
+
+          <li class="card-item">
+            <strong>200</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -151,7 +343,33 @@
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Casa en renta<i class="material-icons right">close</i></span>
-          <h5>Entre mas corriente, mas ambiente!, aprovecha esta promocion para que no digas que la quincena no te alcanza para la fiesta</h5>
+          <div class="card-badge orange">En proceso de renta</div>
+          <h5>Encantadora casa colonial con un hermoso patio interior y detalles arquitectónicos tradicionales. Ubicada en el corazón del casco antiguo, cerca de tiendas y restaurantes.</h5>
+          <ul class="card-list">
+            <li class="card-item">
+              <strong>3</strong>
+    
+              <ion-icon name="bed-outline"></ion-icon>
+    
+              <span>Cuartos</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>3</strong>
+    
+              <ion-icon name="man-outline"></ion-icon>
+    
+              <span>Baños</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>240</strong>
+    
+              <ion-icon name="square-outline"></ion-icon>
+    
+              <span>Metros cuadrados</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -165,7 +383,8 @@
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Terreno centrico<i class="material-icons right">close</i></span>
-          <h5>El mejor combo para pasarla bien!, llevate una botella de smirnoff tamarindo y un paketaxo por solo $255</h5>
+          <div class="card-badge green">En venta</div>
+          <h5>Terreno comercial en una zona de alto tráfico, ideal para establecer un negocio exitoso. Cuenta con fácil acceso y visibilidad.</h5>
         </div>
       </div>
     </div>
@@ -179,7 +398,33 @@
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Casa moderna<i class="material-icons right">close</i></span>
-          <h5>El mejor combo para pasarla bien!, llevate una botella de smirnoff tamarindo y un paketaxo por solo $255</h5>
+          <div class="card-badge green">En venta</div>
+          <h5>Moderna casa de diseño arquitectónico único, con características de lujo y acabados de alta calidad. Disfruta de sus amplias áreas de entretenimiento y su propia sala de cine.</h5>
+          <ul class="card-list">
+            <li class="card-item">
+              <strong>4</strong>
+    
+              <ion-icon name="bed-outline"></ion-icon>
+    
+              <span>Cuartos</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>3</strong>
+    
+              <ion-icon name="man-outline"></ion-icon>
+    
+              <span>Baños</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>280</strong>
+    
+              <ion-icon name="square-outline"></ion-icon>
+    
+              <span>Metros cuadrados</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -193,10 +438,317 @@
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">Departamento en venta<i class="material-icons right">close</i></span>
-          <h5>El alma de la fiesta!, llevate una Don Julio 70 en tan solo 879 pesos para que la sed no sea un impedimento</h5>
+          <div class="card-badge green">En renta</div>
+          <h5>Acogedor departamento en una zona residencial tranquila. Cuenta con un diseño funcional, mucha luz natural y acceso a áreas verdes.</h5>
+          <ul class="card-list">
+            <li class="card-item">
+              <strong>2</strong>
+    
+              <ion-icon name="bed-outline"></ion-icon>
+    
+              <span>Cuartos</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>1</strong>
+    
+              <ion-icon name="man-outline"></ion-icon>
+    
+              <span>Baño</span>
+            </li>
+    
+            <li class="card-item">
+              <strong>140</strong>
+    
+              <ion-icon name="square-outline"></ion-icon>
+    
+              <span>Metros cuadrados</span>
+            </li>
+          </ul>
         </div>
       </div>  
     </div>
+</div>
+
+
+<div class="row">
+  <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/casal.jpeg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Casa en Altozano<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Casa en Altozano<i class="material-icons right">close</i></span>
+        <div class="card-badge orange">En proceso de venta</div>
+        <h5>Casa elegante y luminosa en una ubicación céntrica. Cuenta con un diseño contemporáneo, con muchos cuartos y espaciosa</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>5</strong>
+  
+            <ion-icon name="bed-outline"></ion-icon>
+  
+            <span>Cuartos</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>4</strong>
+  
+            <ion-icon name="man-outline"></ion-icon>
+  
+            <span>Baños</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>320</strong>
+  
+            <ion-icon name="square-outline"></ion-icon>
+  
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
+      </div>
+    </div>  
+  </div>
+  <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/d1.jpeg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Departamento<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Departamento<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En venta</div>
+        <h5>Departamento de lujo con acabados de alta calidad y vistas panorámicas al mar. Disfruta de sus amplias terrazas y acceso a servicios exclusivos.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>2</strong>
+  
+            <ion-icon name="bed-outline"></ion-icon>
+  
+            <span>Cuartos</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>2</strong>
+  
+            <ion-icon name="man-outline"></ion-icon>
+  
+            <span>Baños</span>
+          </li>
+  
+          <li class="card-item">
+            <strong>168</strong>
+  
+            <ion-icon name="square-outline"></ion-icon>
+  
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/t1.webp">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Terreno en renta<i class="material-icons right">more_vert</i></span>
+{% comment %}<p><a href="/abarrotes/landingproductoa">Productos</a></p> {% endcomment %}
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Terreno en renta<i class="material-icons right">close</i></span>
+        <div class="card-badge orange">En proceso de renta</div>
+        <h5>Terreno en una zona residencial tranquila, rodeado de naturaleza. Perfecto para construir una casa familiar con un amplio jardín.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col s3 center">
+  <div class="card center">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="/media/c3.jpeg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Casa en renta<i class="material-icons right">more_vert</i></span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Casa en renta<i class="material-icons right">close</i></span>
+      <div class="card-badge green">En renta</div>
+      <h5>Casa de estilo mediterráneo con un diseño abierto y mucha luz natural. Disfruta de su amplio jardín, zona de barbacoa y piscina.</h5>
+      <ul class="card-list">
+        <li class="card-item">
+          <strong>4</strong>
+
+          <ion-icon name="bed-outline"></ion-icon>
+
+          <span>Cuartos</span>
+        </li>
+
+        <li class="card-item">
+          <strong>3</strong>
+
+          <ion-icon name="man-outline"></ion-icon>
+
+          <span>Baños</span>
+        </li>
+
+        <li class="card-item">
+          <strong>240</strong>
+
+          <ion-icon name="square-outline"></ion-icon>
+
+          <span>Metros cuadrados</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/d2.jpeg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Departamento exclusivo<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Departamento exclusivo<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En renta</div>
+        <h5>Moderno y luminoso departamento de dos dormitorios en una ubicación céntrica. Cuenta con una cocina abierta, área de trabajo y acceso a un gimnasio comunitario.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>2</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baños</span>
+          </li>
+
+          <li class="card-item">
+            <strong>130</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
+      </div>
+    </div>  
+  </div>
+  <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/c4.jpeg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Casa en venta<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Casa en venta<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En venta</div>
+        <h5>Casa contemporánea con acabados de alta gama y una decoración elegante. Cuenta con un diseño de planta abierta, habitaciones espaciosas y un garaje privado.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>4</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baños</span>
+          </li>
+
+          <li class="card-item">
+            <strong>340</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/t2.avif">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Terreno sobre avenida<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Terreno sobre avenida<i class="material-icons right">close</i></span>
+        <div class="card-badge green">En renta</div>
+        <h5>Terreno urbano en una zona en crecimiento, cerca de servicios y comodidades. Ideal para desarrollar un proyecto residencial o comercial.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col s3 center">
+    <div class="card center">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="/media/depar.webp">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Casa rustica<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Casa rustica<i class="material-icons right">close</i></span>
+        <div class="card-badge orange">En proceso de venta</div>
+        <h5>Encantadora casa de campo en un entorno tranquilo y natural. Cuenta con un amplio terreno, árboles frutales y un porche acogedor.</h5>
+        <ul class="card-list">
+          <li class="card-item">
+            <strong>2</strong>
+
+            <ion-icon name="bed-outline"></ion-icon>
+
+            <span>Cuartos</span>
+          </li>
+
+          <li class="card-item">
+            <strong>3</strong>
+
+            <ion-icon name="man-outline"></ion-icon>
+
+            <span>Baños</span>
+          </li>
+
+          <li class="card-item">
+            <strong>200</strong>
+
+            <ion-icon name="square-outline"></ion-icon>
+
+            <span>Metros cuadrados</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
 </div>
 <br>
 <br>

@@ -37,7 +37,7 @@ def landing(request):
 #======================REGISTRO=================
 def registro(request):
     if request.user.is_authenticated:
-        return redirect('landing')
+        return redirect('/')
     else:
         form = CreateUserForm()
         if request.method=='POST':
@@ -46,7 +46,7 @@ def registro(request):
                 form.save()
                 user=form.cleaned_data.get('username')
                 messages.success(request,'La cuenta ha sido creada para:'+ user)
-                return redirect('landing')
+                return redirect('/')
 
         context={'form':form}
         return render(request,'register.html',context)
@@ -78,6 +78,27 @@ def propiedades(request):
 #====================CASAS====================
 def casas(request):
     template_to_return='casas.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)
+#====================CASAS ONLY====================
+def casass(request):
+    template_to_return='casass.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)
+#====================terrenos====================
+def terrenos(request):
+    template_to_return='terrenos.html'
+    context={ 
+        'view_name': "landing1",
+    }
+    return render (request,template_to_return,context)
+#====================depas====================
+def depas(request):
+    template_to_return='depas.html'
     context={ 
         'view_name': "landing1",
     }
